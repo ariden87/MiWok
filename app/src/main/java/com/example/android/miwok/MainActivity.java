@@ -19,6 +19,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.content.Intent;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import static com.example.android.miwok.R.id.colors;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,8 +33,45 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-    }
 
+        //Trova id della view per le categorie necessarie
+        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
+        TextView colorsTextView = (TextView) findViewById(colors);
+        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
+        TextView familyTextView = (TextView) findViewById(R.id.family);
+
+        numbersTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        colorsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+        phrasesTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+        familyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(numbersIntent);
+            }}
+        );
+
+    }
+/*
     public void openColorsActivity (View view){
         Intent intent = new Intent(this, ColorsActivity.class);
         startActivity(intent);
@@ -50,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+*/
+
 
 
 }
